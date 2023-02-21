@@ -16,11 +16,13 @@
   input {
     flex: 1;
     height: 100%;
+    padding-right: 40px;
     color: var(--black);
     font-size: 1.6rem;
     // Dau nhay
     caret-color: var(--primary);
     background-color: transparent;
+    font-family: var(--font-family);
   }
 
   input:not(:placeholder-shown) ~ .search-btn {
@@ -56,6 +58,19 @@
   top: 50%;
   transform: translateY(-50%);
   color: rgba(22, 24, 35, 0.34);
+}
+
+.loading {
+  animation: spinner 0.8s linear infinite;
+}
+
+@keyframes spinner {
+  from {
+    transform: translateY(-50%) rotate(0);
+  }
+  to {
+    transform: translateY(-50%) rotate(360deg);
+  }
 }
 
 .search-btn {

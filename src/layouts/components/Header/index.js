@@ -11,17 +11,18 @@ import {
     faCoins,
     faSignOut,
 } from "@fortawesome/free-solid-svg-icons";
-import { faMessage, faPaperPlane } from "@fortawesome/free-regular-svg-icons";
+import config from '../../../config/index';
 import { } from "@fortawesome/free-brands-svg-icons"
 import Tippy from "@tippyjs/react";
-import images from "../../../../assets/images";
+import images from "../../../assets/images";
 import styles from "./Header.module.scss";
-import Button from "../../../Button";
-import Menu from "../../../Popper/Menu";
+import Button from "../../../components/Button";
+import Menu from "../../../components/Popper/Menu";
 import "tippy.js/dist/tippy.css";
-import Image from "../../../Image";
+import Image from "../../../components/Image";
 import Search from "../Search";
-import { InboxIcon, MessageIcon, UploadIcon } from "../../../Icons";
+import { InboxIcon, MessageIcon, UploadIcon } from "../../../components/Icons";
+import { Link } from "react-router-dom";
 
 const cx = classNames.bind(styles);
 
@@ -96,7 +97,7 @@ function Header() {
     return (
         <header className={cx("wrapper")}>
             <div className={cx("inner")}>
-                <img src={images.logo} alt="TikTok" />
+                <Link to={config.routes.home} className={cx("logo-link")}><img src={images.logo} alt="TikTok" /></Link>
 
                 {/* search */}
                 <Search />
@@ -133,7 +134,7 @@ function Header() {
                         {currentUser ? (
                             <Image
                                 className={cx("user-avatar")}
-                                src="https://sheis.vn/wp-content/uploads/2022/06/cac-tu-the-chup-anh-dep-cho-be-gai-7-"
+                                src="https://images.unsplash.com/photo-1500622944204-b135684e99fd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bmF0dXJhbHxlbnwwfHwwfHw%3D&w=1000&q=80"
                                 alt="Nguyen Van A"
                             />
                         ) : (
